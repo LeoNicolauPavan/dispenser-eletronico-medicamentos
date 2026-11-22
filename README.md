@@ -135,7 +135,3 @@ Este repositório integra a documentação técnica do Trabalho de Conclusão de
 ---
 
 **Desenvolvido por Léo Nicolau Pavan — UTFPR, 2026.**
-
----
-
-**Desenvolvido por Léo Nicolau Pavan — UTFPR, 2026.**
