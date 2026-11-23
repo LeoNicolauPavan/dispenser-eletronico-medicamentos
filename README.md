@@ -51,7 +51,8 @@ Os principais componentes empregados no desenvolvimento do protótipo são:
 - Sete LEDs indicadores dos dias da semana.
 - Buzzer para sinalização sonora.
 - Sete resistores de 220 ohms.
-- Power bank de 10.000 mAh.
+- Power bank Pineng PN-951 de 10.000 mAh.
+- Carregador USB.
 - Cabos e conectores elétricos.
 
 A estrutura física do equipamento foi desenvolvida no Autodesk Fusion 360 e fabricada por impressão 3D.
@@ -94,21 +95,29 @@ Também são utilizadas bibliotecas nativas da linguagem C++ e recursos específ
 
 ### Observação sobre a biblioteca PS2Keyboard
 
-A biblioteca PS2Keyboard utilizada no protótipo possui uma adaptação para o reconhecimento das teclas de função F1, F3 e F5.
+Para permitir o reconhecimento das teclas de função do teclado PS/2, foi utilizada uma versão adaptada da biblioteca PS2Keyboard, originalmente disponibilizada por Paul Stoffregen e colaboradores.
 
-Essa adaptação permite utilizar os seguintes atalhos:
+A adaptação foi necessária para que o software embarcado pudesse identificar as teclas F1, F3 e F5 e associá-las a funcionalidades específicas do equipamento.
 
-- **F1:** cadastro de medicamentos.
-- **F3:** ajuste de data e hora.
-- **F5:** acesso ao gerenciador de medicamentos.
+Na implementação utilizada no protótipo, o programa reconhece os seguintes códigos:
 
-A adaptação não está incluída neste repositório e deve ser considerada para reproduzir integralmente o funcionamento original do protótipo.
+- **F1 — Código 1:** acesso ao cadastro de medicamentos.
+- **F3 — Código 2:** acesso ao ajuste de data e hora.
+- **F5 — Código 3:** acesso ao gerenciador de medicamentos.
+
+Esses códigos são utilizados pelo software para interpretar os atalhos e executar as operações correspondentes.
+
+**Importante:** os arquivos modificados da biblioteca PS2Keyboard não estão incluídos neste repositório. Para reproduzir integralmente o funcionamento original do teclado PS/2, é necessário utilizar uma versão adaptada da biblioteca que reconheça as teclas mencionadas e retorne os códigos esperados pelo programa.
+
+A biblioteca original pode ser consultada em:
+
+[PS2Keyboard — Repositório original](https://github.com/PaulStoffregen/PS2Keyboard)
 
 ## 6. Acesso ao código-fonte completo
 
 A versão final documentada do software embarcado está disponível no seguinte arquivo:
 
-**[ACESSAR O CÓDIGO-FONTE COMPLETO DO DISPENSER](VersaoDispensadorDispensadorMedicamentoscerto.ino)**
+**[ACESSAR O CÓDIGO-FONTE COMPLETO DO DISPENSER](VersaoFinalDispenserMedicamentoscerto.ino)**
 
 O arquivo contém a programação integral utilizada no desenvolvimento do protótipo, incluindo os 31 blocos explicativos, as funções de controle e as rotinas de interação com os dispositivos eletrônicos.
 
